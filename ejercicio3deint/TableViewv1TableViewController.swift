@@ -1,52 +1,46 @@
 //
-//  TableViewController.swift
+//  TableViewv1TableViewController.swift
 //  ejercicio3deint
 //
-//  Created by Daniel on 04/06/2019.
+//  Created by dam on 05/06/2019.
 //  Copyright © 2019 Daniel. All rights reserved.
 //
 
 import UIKit
 
-var cafes = [Cafe]()
-
-class TableViewController: UITableViewController {
+class TableViewv1TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadCafes()
-        
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return cafes.count
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cellIdentifier = "CafeTableViewCell"
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? TableViewCell else {
-            fatalError("The dequeued cell is not an instance of TableViewCell.")
-        }
-        
-        let cafe = cafes[indexPath.row]
-        
-        cell.imagen.image = cafe.photo
-        cell.label.text = cafe.name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
 
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -58,7 +52,7 @@ class TableViewController: UITableViewController {
 
     /*
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -92,25 +86,5 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    private func loadCafes(){
-        let photo1 = UIImage(named: "Unknown-1")
-        let photo2 = UIImage(named: "Unknown-2")
-        let photo3 = UIImage(named: "Unknown-3")
-        
-        guard let cafe1 = Cafe(name: "First coffee", photo: photo1) else {
-            fatalError("Unable to instantiate cafe1")
-        }
-        
-        guard let cafe2 = Cafe(name: "Second coffe", photo: photo2) else {
-            fatalError("Unable to instantiate cafe2")
-        }
-        
-        guard let cafe3 = Cafe(name: "Third coffee", photo: photo3) else {
-            fatalError("Unable to instantiate cafe3")
-        }
-        
-        cafes += [cafe1, cafe2, cafe3]
-    }
 
 }

@@ -10,11 +10,11 @@ import UIKit
 
 class Cafe{
     
-    var ciudad: String
+    var name: String
     var photo: UIImage?
     
-    init?(ciudad: String, photo: UIImage?) {
-        self.ciudad = ciudad
+    init?(name: String, photo: UIImage?) {
+        self.name = name
         self.photo = photo
     }
 }
